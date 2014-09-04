@@ -8,5 +8,6 @@ app.controller("SampleCtrl", ["$scope", "$firebase", function($scope, $firebase)
 
   $scope.addMessage = function(text) {
     $scope.messages.$add({text: text});
+    $scope.newMessageText = null;
   }
 }]);
