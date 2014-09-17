@@ -4,6 +4,7 @@ app.controller("SampleCtrl", ["$scope", "$firebase", function($scope, $firebase)
   var ref = new Firebase("https://resplendent-fire-4324.firebaseio.com/messages");
   var sync = $firebase(ref);
 
+  /*
   var setTitle = function() {
     var title = document.title;
     document.title = (title == "nova" ? "mensagem" : "nova");
@@ -24,6 +25,7 @@ app.controller("SampleCtrl", ["$scope", "$firebase", function($scope, $firebase)
   window.onkeydown = activeMethod;
   window.onscroll = activeMethod;
   window.onmousewheel = activeMethod;
+  */
 
   $scope.messages = sync.$asArray();
 
