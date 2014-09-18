@@ -1,6 +1,6 @@
 var app = angular.module("sampleApp", ["firebase"]);
 
-app.controller("SampleCtrl", ["$scope", "$firebase", function($scope, $firebase) {
+app.controller("SampleCtrl", ["$scope", "$location", "$anchorScroll", "$firebase", function($scope, $location, $anchorScroll, $firebase) {
   var ref = new Firebase("https://resplendent-fire-4324.firebaseio.com/messages");
   var sync = $firebase(ref);
 
@@ -32,5 +32,11 @@ app.controller("SampleCtrl", ["$scope", "$firebase", function($scope, $firebase)
   $scope.addMessage = function(text) {
     $scope.messages.$add({text: text});
     $scope.newMessageText = null;
-  }
+    $scope.goToBottom();
+  };
+
+  $scope.goToBottom = function() {
+    $location.hash('scroll-bottom');
+    $anchorScroll();
+  };
 }]);
