@@ -39,4 +39,6 @@ app.controller("SampleCtrl", ["$scope", "$location", "$anchorScroll", "$firebase
     $location.hash('scroll-bottom');
     $anchorScroll();
   };
+
+  $scope.goToBottom();
 }]);
